@@ -8,14 +8,53 @@
 </head>
 <body>
     <header>
-        <h1>Sistema do Restaurante</h1>
+        <h1>🍽️ Sistema do Restaurante</h1>
+        <p class="subtitle">Gerencie seus pedidos com eficiência</p>
     </header>
 
     <main>
-        <section id="orders-section">
-            <h2>Pedidos</h2>
-            <div id="orders-container"></div>
-        </section>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="active-orders-count">0</div>
+                <div class="stat-label">Pedidos Ativos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="completed-orders-count">0</div>
+                <div class="stat-label">Pedidos Concluídos</div>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <div class="section-icon">🔥</div>
+                        Pedidos em Preparo
+                    </div>
+                </div>
+                <div class="orders-container" id="orders-container">
+                    <div class="loading">Carregando pedidos...</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <div class="section-icon">✅</div>
+                        Histórico de Pedidos
+                    </div>
+                    <button class="btn btn-clear" onclick="clearHistory()">
+                        Limpar Histórico
+                    </button>
+                </div>
+                <div class="orders-container" id="history-container">
+                    <div class="empty-state">
+                        <div class="empty-icon">📋</div>
+                        <div class="empty-message">Nenhum pedido concluído ainda</div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <script src="script.js"></script>
